@@ -1,94 +1,841 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Garrett W Music - Live Piano Performances and Acoustic Music">
-    <title>Garrett W Music</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
-        }
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(135deg, #d4af37, #8b6d4d);
-            color: white;
-        }
-        header img {
-            max-width: 150px;
-            margin-bottom: 20px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            font-style: italic;
-            font-size: 1.2em;
-        }
-        section {
-            max-width: 800px;
-            margin: 40px auto;
-            text-align: center;
-            padding: 20px;
-        }
-        .contact {
-            background-color: #333;
-            color: white;
-            padding: 40px 20px;
-        }
-        .contact a {
-            color: #d4af37;
-            text-decoration: none;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            background: #222;
-            color: white;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Garrett W Music — Live piano, acoustic trio, and ensemble performances for weddings, private events, and celebrations in Maryland.">
+<title>Garrett W Music — Live Music for Life's Best Moments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dim: #8a6f2e;
+    --dark: #0e0d0b;
+    --dark-mid: #181610;
+    --dark-card: #1e1b14;
+    --cream: #f5f0e8;
+    --cream-dim: #b8b0a0;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--dark);
+    color: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(14,13,11,0.95), transparent);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--gold-light);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 8rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://lh3.googleusercontent.com/pw/AP1GczPSLeKRQL9N1EfPucwDzVbD2fCpRzkySfTXqKt4jwnyWL993VdXnGAxCFBbqnfQJGYt5IBjgf9gO2f9Vj9p-S7f8gvWASlgvESsImSbX4X1S7dhtAY=w1600-h900-p-k');
+    background-size: cover;
+    background-position: center 30%;
+    filter: brightness(0.45);
+    transform: scale(1.05);
+    animation: heroZoom 20s ease-out forwards;
+  }
+
+  @keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to   { transform: scale(1.0); }
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(14,13,11,0.2) 0%,
+      rgba(14,13,11,0.1) 40%,
+      rgba(14,13,11,0.7) 75%,
+      rgba(14,13,11,1.0) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 3rem;
+    max-width: 800px;
+    animation: fadeUp 1.2s ease-out 0.3s both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--cream-dim);
+    letter-spacing: 0.05em;
+    max-width: 480px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.85rem 2.5rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.35s;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold);
+    color: var(--dark);
+  }
+
+  /* ── DIVIDER ── */
+  .gold-line {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 1rem;
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    padding: 7rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 1.8rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .section-body {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--cream-dim);
+    max-width: 620px;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-image {
+    position: relative;
+  }
+
+  .about-image img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(20%) brightness(0.9);
+  }
+
+  .about-image::before {
+    content: '';
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    border: 1px solid var(--gold-dim);
+    z-index: -1;
+  }
+
+  /* ── OFFERINGS ── */
+  .offerings-section {
+    background: var(--dark-mid);
+    max-width: 100%;
+    padding: 7rem 3rem;
+  }
+
+  .offerings-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 4rem;
+  }
+
+  .offering-card {
+    background: var(--dark-card);
+    padding: 3rem 2.5rem;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .offering-card:hover {
+    background: #252015;
+  }
+
+  .offering-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold-dim);
+    transition: background 0.3s;
+  }
+
+  .offering-card:hover::before {
+    background: var(--gold);
+  }
+
+  .offering-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--gold-dim);
+    display: block;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+  }
+
+  .offering-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .offering-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--cream-dim);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .offering-ideal {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+
+  /* ── PHOTO STRIP ── */
+  .photo-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .photo-strip-item {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+
+  .photo-strip-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%) brightness(0.85);
+    transition: filter 0.5s, transform 0.5s;
+  }
+
+  .photo-strip-item:hover img {
+    filter: grayscale(0%) brightness(1.0);
+    transform: scale(1.03);
+  }
+
+  /* ── EVENTS ── */
+  .events-list {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .event-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    transition: padding-left 0.3s;
+  }
+
+  .event-item:hover {
+    padding-left: 0.5rem;
+  }
+
+  .event-icon {
+    color: var(--gold);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .event-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--white);
+    flex: 1;
+  }
+
+  .event-note {
+    font-size: 0.8rem;
+    color: var(--cream-dim);
+    font-weight: 300;
+  }
+
+  /* ── QUOTE ── */
+  .quote-section {
+    background: var(--dark-card);
+    max-width: 100%;
+    padding: 6rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-section::before {
+    content: '\201C';
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20rem;
+    color: rgba(201, 168, 76, 0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream);
+    max-width: 750px;
+    margin: 0 auto 2rem;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+
+  .quote-attr {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--dark-card);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 0.85rem 1rem;
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .form-group select option {
+    background: var(--dark-card);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .contact-info {
+    padding-top: 1rem;
+  }
+
+  .contact-detail {
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-detail-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-detail-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+  }
+
+  .contact-detail-value:hover {
+    color: var(--gold-light);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(201, 168, 76, 0.1);
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--gold-light);
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: var(--cream-dim);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .footer-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--gold-light); }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero-content { padding: 0 1.5rem; }
+    section { padding: 5rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .offerings-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .photo-strip { grid-template-columns: repeat(2, 1fr); }
+    footer { flex-direction: column; text-align: center; }
+    .offerings-section { padding: 5rem 1.5rem; }
+    .quote-section { padding: 4rem 1.5rem; }
+  }
+</style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Garrett W Music Logo" id="logo">
-        <h1>Garrett W Music</h1>
-        <p>Elegant Piano Performances and Acoustic Music</p>
-    </header>
 
-    <section>
-        <h2>Welcome</h2>
-        <p>
-            Experience the timeless elegance of live piano music, brought to life by Garrett W. 
-            Whether you're looking for a performance for a wedding, private event, or a special gathering, 
-            Garrett W Music delivers an unforgettable experience.
-        </p>
-    </section>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Garrett W Music</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#offerings">Offerings</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#contact">Book</a></li>
+  </ul>
+</nav>
 
-    <section>
-        <h2>About</h2>
-        <p>
-            Garrett W is a skilled pianist and multi-instrumentalist who brings decades of experience 
-            and passion to every performance. Known for his versatility and elegant style, 
-            Garrett is available for events of all sizes.
-        </p>
-    </section>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Maryland • Weddings & Private Events</span>
+    <h1>Music That <em>Moves</em> the Room</h1>
+    <p class="hero-sub">Live piano, acoustic guitar, and ensemble performances crafted for your most meaningful celebrations.</p>
+    <a href="#contact" class="btn-primary">Inquire About Your Date</a>
+  </div>
+</div>
 
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:ntropeymedia@gmail.com">ntropeymedia@gmail.com</a></p>
-        <p>Call: <a href="tel:+14433029615">443-302-9615</a></p>
-        <a target="_blank" href="https://www.theknot.com/marketplace/redirect-2089790?utm_source=vendor_website&utm_medium=banner&utm_term=57bac051-6b8b-4e3a-bc48-cafafca4df42&utm_campaign=vendor_badge_assets"><img alt="As Seen on The Knot" border="0" src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-badge_AsSeen.png" width="190"></a>
-    </section>
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid reveal">
+    <div class="about-image">
+      <img 
+        src="https://lh3.googleusercontent.com/pw/AP1GczPSLeKRQL9N1EfPucwDzVbD2fCpRzkySfTXqKt4jwnyWL993VdXnGAxCFBbqnfQJGYt5IBjgf9gO2f9Vj9p-S7f8gvWASlgvESsImSbX4X1S7dhtAY=w800-h1000-p-k" 
+        alt="Garrett W Music — Live Performance"
+        onerror="this.src='https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&q=80'"
+      >
+    </div>
+    <div class="about-text">
+      <span class="section-label">About</span>
+      <h2 class="section-title">More Than <em>Background Music</em></h2>
+      <p class="section-body">
+        Garrett W brings decades of performance experience to every event — from intimate solo piano to a full acoustic trio with vocals. Rooted in The Great American Songbook with a broad reach into contemporary favorites, the sound is warm, versatile, and unmistakably live.
+      </p>
+      <br>
+      <p class="section-body">
+        Based on Maryland's Eastern Shore, Garrett W Music has performed at weddings, engagement celebrations, private gatherings, and corporate events throughout the Chesapeake Bay region.
+      </p>
+      <br><br>
+      <a href="#contact" class="btn-primary">Check Availability</a>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        &copy; 2024 Garrett W Music. All rights reserved.
-    </footer>
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="photo-strip-item">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczPSLeKRQL9N1EfPucwDzVbD2fCpRzkySfTXqKt4jwnyWL993VdXnGAxCFBbqnfQJGYt5IBjgf9gO2f9Vj9p-S7f8gvWASlgvESsImSbX4X1S7dhtAY=w800-h600-p-k" alt="Live performance" onerror="this.style.background='#1e1b14'">
+  </div>
+  <div class="photo-strip-item">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczPSLeKRQL9N1EfPucwDzVbD2fCpRzkySfTXqKt4jwnyWL993VdXnGAxCFBbqnfQJGYt5IBjgf9gO2f9Vj9p-S7f8gvWASlgvESsImSbX4X1S7dhtAY=w600-h800-p-k" alt="Band portrait" onerror="this.style.background='#252015'">
+  </div>
+  <div class="photo-strip-item">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczPSLeKRQL9N1EfPucwDzVbD2fCpRzkySfTXqKt4jwnyWL993VdXnGAxCFBbqnfQJGYt5IBjgf9gO2f9Vj9p-S7f8gvWASlgvESsImSbX4X1S7dhtAY=w800-h600-p-k" alt="Acoustic performance" onerror="this.style.background='#1a1810'">
+  </div>
+</div>
+
+<!-- OFFERINGS -->
+<div class="offerings-section" id="offerings">
+  <div class="offerings-inner">
+    <div class="reveal" style="text-align:center; margin-bottom:1rem;">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title" style="margin:0 auto;">Three Ways to <em>Experience</em> the Music</h2>
+    </div>
+    <div class="offerings-grid reveal">
+      <div class="offering-card">
+        <span class="offering-num">01</span>
+        <h3 class="offering-title">Solo Piano</h3>
+        <p class="offering-desc">Elegant and intimate. The full breadth of The Songbook — jazz standards, contemporary favorites, and everything in between. Perfect for cocktail hours, ceremony, or background ambiance.</p>
+        <span class="offering-ideal">Ideal for: Cocktail Hours · Ceremonies · Dinners</span>
+      </div>
+      <div class="offering-card">
+        <span class="offering-num">02</span>
+        <h3 class="offering-title">Acoustic Duo</h3>
+        <p class="offering-desc">Keys and guitar, voices blended. A versatile pairing that fills a room with warmth without overwhelming the space. Repertoire spans decades — from the classics to today.</p>
+        <span class="offering-ideal">Ideal for: Receptions · Private Parties · Rehearsal Dinners</span>
+      </div>
+      <div class="offering-card">
+        <span class="offering-num">03</span>
+        <h3 class="offering-title">Full Trio</h3>
+        <p class="offering-desc">Piano, guitar, and vocals — the complete experience. Professional PA and lighting included. Three sets of live music that arc from romantic to celebratory, perfectly timed to your evening.</p>
+        <span class="offering-ideal">Ideal for: Weddings · Engagement Parties · Corporate Events</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <p class="quote-text">We didn't know the amps were on. That's how clean and natural everything sounded.</p>
+  <span class="quote-attr">— Recent Event Client</span>
+</div>
+
+<!-- EVENTS -->
+<section id="events">
+  <div class="reveal">
+    <span class="section-label">Perfect For</span>
+    <h2 class="section-title">Every <em>Occasion</em> Deserves Live Music</h2>
+  </div>
+  <div class="events-list reveal">
+    <div class="event-item">
+      <span class="event-icon">♦</span>
+      <span class="event-name">Weddings & Ceremonies</span>
+      <span class="event-note">Ceremony through reception</span>
+    </div>
+    <div class="event-item">
+      <span class="event-icon">♦</span>
+      <span class="event-name">Engagement Celebrations</span>
+      <span class="event-note">Intimate or large gatherings</span>
+    </div>
+    <div class="event-item">
+      <span class="event-icon">♦</span>
+      <span class="event-name">Rehearsal Dinners</span>
+      <span class="event-note">Set the tone for the weekend</span>
+    </div>
+    <div class="event-item">
+      <span class="event-icon">♦</span>
+      <span class="event-name">Corporate Events</span>
+      <span class="event-note">Galas, holiday parties, client events</span>
+    </div>
+    <div class="event-item">
+      <span class="event-icon">♦</span>
+      <span class="event-name">Private Parties</span>
+      <span class="event-note">Birthdays, anniversaries, celebrations</span>
+    </div>
+    <div class="event-item">
+      <span class="event-icon">♦</span>
+      <span class="event-name">Outdoor Venues</span>
+      <span class="event-note">Ranch, waterfront, garden — fully self-contained</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div style="background: var(--dark-mid); padding: 1px 0;">
+<section id="contact">
+  <div class="contact-grid">
+    <div class="reveal">
+      <span class="section-label">Bookings</span>
+      <h2 class="section-title">Let's Make Your <em>Event Unforgettable</em></h2>
+      <p class="section-body">Tell us about your event and we'll be in touch within 24 hours to discuss availability, configuration, and how to make your celebration exactly right.</p>
+      <br><br>
+      <div class="contact-info">
+        <div class="contact-detail">
+          <span class="contact-detail-label">Phone</span>
+          <a href="tel:+14433029615" class="contact-detail-value">443.302.9615</a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Email</span>
+          <a href="mailto:ntropeymedia@gmail.com" class="contact-detail-value">ntropeymedia@gmail.com</a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Service Area</span>
+          <span class="contact-detail-value" style="cursor:default;">Maryland & Chesapeake Bay Region</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="contact-form">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Event Date</label>
+          <input type="date">
+        </div>
+        <div class="form-group">
+          <label>Event Type</label>
+          <select>
+            <option value="" disabled selected>Select event type</option>
+            <option>Wedding</option>
+            <option>Engagement Party</option>
+            <option>Rehearsal Dinner</option>
+            <option>Corporate Event</option>
+            <option>Private Party</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Configuration</label>
+          <select>
+            <option value="" disabled selected>Solo, Duo, or Trio?</option>
+            <option>Solo Piano</option>
+            <option>Acoustic Duo</option>
+            <option>Full Trio</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell Us About Your Event</label>
+          <textarea placeholder="Venue, expected guests, any special requests..."></textarea>
+        </div>
+        <a href="mailto:ntropeymedia@gmail.com" class="btn-primary" style="text-align:center; margin-top:0.5rem;">Send Inquiry</a>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Garrett W Music</span>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#offerings">Offerings</a>
+    <a href="#contact">Book</a>
+  </div>
+  <span class="footer-copy">© 2026 Garrett W Music · Maryland</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Staggered offering cards
+  document.querySelectorAll('.offering-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.15}s`;
+  });
+</script>
+
 </body>
 </html>
